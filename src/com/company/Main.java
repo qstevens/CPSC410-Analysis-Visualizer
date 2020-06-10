@@ -3,33 +3,76 @@ package com.company;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 
 public class Main {
 
     public static void main(String[] args) throws IOException {
         // Read file
-        String fileName = "test.js";
+        String fileName = "test.go";
         List<String> content = Files.readAllLines(Paths.get(fileName));
         System.out.println(content);
+
+        // Get individual functions
         List<String> functions = new ArrayList<>();
+
         StringBuilder sb = new StringBuilder();
         for (String s: content) {
-            if (sb.toString().isEmpty() && s.split("\\s")[0].equals("function")) {
-                sb.append(s+"\n");
+            if (sb.toString().isEmpty() && s.split("\\s")[0].equals("func")) {
+                sb.append(s).append("\n");
             } else if (s.equals("}")) {
-                sb.append(s+"\n");
+                sb.append(s).append("\n");
                 functions.add(sb.toString());
                 sb.setLength(0);
             } else if (sb.length() > 0) {
-                sb.append(s+"\n");
+                sb.append(s).append("\n");
             }
         }
 
         System.out.println(functions);
 
+        Map<String, Set<String>> functionMap = new HashMap<>();
 
+        for (String f: functions) {
+            String[] lines = f.split("\n");
+
+            String caller = findFunction(lines[0]);
+            Set<String> funcSet = functionMap.getOrDefault(caller, new HashSet<>());
+
+            System.out.println(Arrays.toString(lines));
+            for (String l: lines) {
+                String func = findFunction(l);
+                if (func.isEmpty()) {
+                    continue;
+                }
+                funcSet.add(func);
+                System.out.println(func);
+            }
+            functionMap.put(caller, funcSet);
+        }
+        System.out.println("mappings");
+        for (Map.Entry<String, Set<String>> e: functionMap.entrySet()) {
+            System.out.println(e.getKey());
+            for (String s: e.getValue()) {
+                System.out.println("\t"+s);
+            }
+        }
+
+
+    }
+
+    private static String findFunction(String line) {
+        int idx = line.indexOf('(');
+        System.out.println(idx);
+        if (idx > 0) {
+            for (int i=idx-1; i>0; i--) {
+                if (!Character.isLetterOrDigit(line.charAt(i))) {
+                    System.out.println(i);
+                    System.out.println(line.substring(i, idx));
+                    return line.substring(i, idx);
+                }
+            }
+        }
+        return "";
     }
 }
