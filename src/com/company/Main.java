@@ -37,18 +37,20 @@ public class Main {
             String[] lines = f.split("\n");
 
             String caller = findFunction(lines[0]);
-            Set<String> funcSet = functionMap.getOrDefault(caller, new HashSet<>());
 
 //            System.out.println(Arrays.toString(lines));
             for (int i=1; i<lines.length; i++) {
-                String func = findFunction(lines[i]);
-                if (func.isEmpty()) {
+                String callee = findFunction(lines[i]);
+
+                if (callee.isEmpty()) {
                     continue;
                 }
-                funcSet.add(func);
+                Set<String> funcSet = functionMap.getOrDefault(callee, new HashSet<>());
+
+                funcSet.add(caller);
 //                System.out.println(func);
+                functionMap.put(callee, funcSet);
             }
-            functionMap.put(caller, funcSet);
         }
         System.out.println("mappings");
         for (Map.Entry<String, Set<String>> e: functionMap.entrySet()) {
