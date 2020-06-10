@@ -11,7 +11,7 @@ public class Main {
         // Read file
         String fileName = "test.go";
         List<String> content = Files.readAllLines(Paths.get(fileName));
-        System.out.println(content);
+//        System.out.println(content);
 
         // Get individual functions
         List<String> functions = new ArrayList<>();
@@ -29,7 +29,7 @@ public class Main {
             }
         }
 
-        System.out.println(functions);
+//        System.out.println(functions);
 
         Map<String, Set<String>> functionMap = new HashMap<>();
 
@@ -39,14 +39,14 @@ public class Main {
             String caller = findFunction(lines[0]);
             Set<String> funcSet = functionMap.getOrDefault(caller, new HashSet<>());
 
-            System.out.println(Arrays.toString(lines));
-            for (String l: lines) {
-                String func = findFunction(l);
+//            System.out.println(Arrays.toString(lines));
+            for (int i=1; i<lines.length; i++) {
+                String func = findFunction(lines[i]);
                 if (func.isEmpty()) {
                     continue;
                 }
                 funcSet.add(func);
-                System.out.println(func);
+//                System.out.println(func);
             }
             functionMap.put(caller, funcSet);
         }
@@ -63,12 +63,12 @@ public class Main {
 
     private static String findFunction(String line) {
         int idx = line.indexOf('(');
-        System.out.println(idx);
+//        System.out.println(idx);
         if (idx > 0) {
             for (int i=idx-1; i>0; i--) {
                 if (!Character.isLetterOrDigit(line.charAt(i))) {
-                    System.out.println(i);
-                    System.out.println(line.substring(i, idx));
+//                    System.out.println(i);
+//                    System.out.println(line.substring(i, idx));
                     return line.substring(i, idx);
                 }
             }
