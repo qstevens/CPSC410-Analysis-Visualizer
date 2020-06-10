@@ -18,16 +18,18 @@ public class Main {
         StringBuilder sb = new StringBuilder();
         for (String s: content) {
             if (sb.toString().isEmpty() && s.split("\\s")[0].equals("function")) {
-                sb.append(s);
+                sb.append(s+"\n");
             } else if (s.equals("}")) {
-                sb.append(s);
+                sb.append(s+"\n");
                 functions.add(sb.toString());
                 sb.setLength(0);
             } else if (sb.length() > 0) {
-                sb.append(s);
+                sb.append(s+"\n");
             }
         }
 
         System.out.println(functions);
+
+
     }
 }
