@@ -11,7 +11,6 @@ public class Main {
         // Read file
         String fileName = "test.go";
         List<String> content = Files.readAllLines(Paths.get(fileName));
-//        System.out.println(content);
 
         // Get individual functions
         List<String> functions = new ArrayList<>();
@@ -29,30 +28,57 @@ public class Main {
             }
         }
 
-//        System.out.println(functions);
-
         Map<String, Set<String>> functionMap = new HashMap<>();
+
+        Map<String, String> funcMap = new HashMap<>();
+
+        for (String f: functions) {
+            String[] lines = f.split("\n");
+            String funcSignature = findFunctionSignature(lines[0]);
+            String func = findFunction(lines[0]);
+            funcMap.put(func, funcSignature);
+        }
+
+        Map<String, Integer> funcLenMap = new HashMap<>();
+
+        for (String f: functions) {
+            String[] lines = f.split("\n");
+            String funcSignature = findFunctionSignature(lines[0]);
+            funcLenMap.put(funcSignature, lines.length);
+        }
+
+
+        System.out.println("Function Lengths:");
+        for (Map.Entry<String, Integer> e: funcLenMap.entrySet()) {
+            System.out.println(e.getKey());
+            System.out.println("\t"+e.getValue());
+        }
+
+        // func(n, m) -> [func(n), func(n, m, p)]
+        // func(2) -> func(n, m)
+        // findFunction -> func(0), func(1), func(2)
+        // findFunctionSignature -> func(n, m)
 
         for (String f: functions) {
             String[] lines = f.split("\n");
 
-            String caller = findFunction(lines[0]);
+            String caller = findFunctionSignature(lines[0]);
 
-//            System.out.println(Arrays.toString(lines));
             for (int i=1; i<lines.length; i++) {
-                String callee = findFunction(lines[i]);
-
-                if (callee.isEmpty()) {
+                String calleeFun = findFunction(lines[i]);
+                if (calleeFun.isEmpty()) {
                     continue;
                 }
+                String callee = funcMap.get(calleeFun);
+
                 Set<String> funcSet = functionMap.getOrDefault(callee, new HashSet<>());
 
                 funcSet.add(caller);
-//                System.out.println(func);
                 functionMap.put(callee, funcSet);
             }
         }
-        System.out.println("mappings");
+
+        System.out.println("Function Mappings:");
         for (Map.Entry<String, Set<String>> e: functionMap.entrySet()) {
             System.out.println(e.getKey());
             for (String s: e.getValue()) {
@@ -61,19 +87,42 @@ public class Main {
         }
 
 
+
     }
 
     private static String findFunction(String line) {
         int idx = line.indexOf('(');
 //        System.out.println(idx);
         if (idx > 0) {
+            int endx = line.indexOf(')');
+
+            String[] lines = line.substring(idx+1, endx).split(",");
+
             for (int i=idx-1; i>0; i--) {
                 if (!Character.isLetterOrDigit(line.charAt(i))) {
 //                    System.out.println(i);
 //                    System.out.println(line.substring(i, idx));
-                    return line.substring(i, idx);
+                    if (endx == idx+1) return line.substring(i, idx) + "(0)";
+                    return line.substring(i, idx) + "(" + lines.length + ")";
                 }
             }
+        }
+        return "";
+    }
+
+    private static String findFunctionSignature(String line) {
+        int idx = line.indexOf('(');
+//        System.out.println(idx);
+        if (idx > 0) {
+            int endx = line.indexOf(')');
+            for (int i=idx-1; i>0; i--) {
+                if (!Character.isLetterOrDigit(line.charAt(i))) {
+                    return line.substring(i, endx+1);
+                }
+            }
+
+
+
         }
         return "";
     }
