@@ -8,6 +8,10 @@ import java.util.*;
 public class Main {
 
     public static void main(String[] args) throws IOException {
+        Map<String, Set<String>> functionMap = new HashMap<>();
+        Map<String, String> funcMap = new HashMap<>();
+        Map<String, Integer> funcLenMap = new HashMap<>();
+
         // Read file
         String fileName = "test.go";
         List<String> content = Files.readAllLines(Paths.get(fileName));
@@ -28,10 +32,6 @@ public class Main {
             }
         }
 
-        Map<String, Set<String>> functionMap = new HashMap<>();
-
-        Map<String, String> funcMap = new HashMap<>();
-
         for (String f: functions) {
             String[] lines = f.split("\n");
             String funcSignature = findFunctionSignature(lines[0]);
@@ -39,7 +39,6 @@ public class Main {
             funcMap.put(func, funcSignature);
         }
 
-        Map<String, Integer> funcLenMap = new HashMap<>();
 
         for (String f: functions) {
             String[] lines = f.split("\n");
@@ -85,7 +84,6 @@ public class Main {
                 System.out.println("\t"+s);
             }
         }
-
 
 
     }
