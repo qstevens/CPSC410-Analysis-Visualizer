@@ -25,9 +25,13 @@ public class converter {
 
         String writeToFiles ="";
 
+//        "\"" used to insert quotations marks, if dot.txt doesn't have the quotation marsk around
         for (Map.Entry<String, Set<String>> e: functionMap.entrySet()) {
             for (String s: e.getValue()) {
-                bodyContent += s + "->" + e.getKey() + "\n";
+                bodyContent +=
+                                "\"" + s + "\""
+                            + "->" +
+                            "\"" + e.getKey() +  "\"" + "\n";
             }
         }
 

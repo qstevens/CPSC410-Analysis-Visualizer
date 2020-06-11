@@ -38,6 +38,13 @@ public class Main {
             String func = findFunction(lines[0]);
             funcMap.put(func, funcSignature);
         }
+        System.out.println("Start funcMap");
+        for (Map.Entry<String, String> e: funcMap.entrySet()) {
+            System.out.println(e.getKey());
+                System.out.println("\t"+e.getValue());
+
+        }
+        System.out.println("End funcMap");
 
 
         for (String f: functions) {
@@ -85,7 +92,8 @@ public class Main {
             }
         }
 
-
+        converter converter = new converter(functionMap);
+        converter.mapToDot();
     }
 
     private static String findFunction(String line) {

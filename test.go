@@ -20,3 +20,6 @@ func fun2() {
 func fun(n, m, p) {
     fun()
 }
+
+func alone(){
+}
