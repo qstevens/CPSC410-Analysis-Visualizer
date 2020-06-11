@@ -5,6 +5,7 @@ func main() {
 func fun() {
     main()
     fun(d)
+    fun(n, m, p)
 }
 
 func fun(n) {
@@ -21,5 +22,5 @@ func fun(n, m, p) {
     fun()
 }
 
-func alone(){
+func loneNode(){
 }

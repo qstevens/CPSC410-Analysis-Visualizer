@@ -1,5 +1,6 @@
 digraph functionAnalysis {
 " main()"->" fun(n, m, p)"
+" fun()"->" fun(n, m, p)"
 " fun(n)"->" main()"
 " fun2()"->" main()"
 " fun()"->" main()"
@@ -7,5 +8,6 @@ digraph functionAnalysis {
 " fun2()"->" fun2()"
 " fun(n, m, p)"->" fun()"
 " fun2()"->" fun()"
+" loneNode()"
 
 }

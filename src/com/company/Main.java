@@ -92,7 +92,7 @@ public class Main {
             }
         }
 
-        converter converter = new converter(functionMap);
+        converter converter = new converter(functionMap, funcMap);
         converter.mapToDot();
     }
 

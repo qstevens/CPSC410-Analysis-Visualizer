@@ -10,9 +10,12 @@ import java.util.Set;
 public class converter {
 
     Map<String, Set<String>> functionMap;
+    Map<String, String> funcMap = new HashMap<>();
 
-    converter( Map<String, Set<String>> functionMap){
+
+    converter( Map<String, Set<String>> functionMap, Map<String, String> funcMap){
         this.functionMap = functionMap;
+        this.funcMap = funcMap;
     }
 // John -> node and edge text conversion
 
@@ -26,6 +29,7 @@ public class converter {
         String writeToFiles ="";
 
 //        "\"" used to insert quotations marks, if dot.txt doesn't have the quotation marsk around
+//        now I need to do the following, implement stand alone functions to be recognized (ie, has no other nodes calling it or it calling other)
         for (Map.Entry<String, Set<String>> e: functionMap.entrySet()) {
             for (String s: e.getValue()) {
                 bodyContent +=
@@ -33,6 +37,14 @@ public class converter {
                             + "->" +
                             "\"" + e.getKey() +  "\"" + "\n";
             }
+        }
+// Lone node calculator
+        for (Map.Entry<String, String> e: funcMap.entrySet()) {
+            if(functionMap.get(e.getValue()) == null){
+                bodyContent +=
+                        "\"" + e.getValue() + "\"" + "\n";
+            }
+
         }
 
         writeToFiles = beginSyntax + "\n" + bodyContent + "\n" + endSyntax;
