@@ -9,7 +9,7 @@ func fun() {
 }
 
 func fun(n) {
-    main()
+    recursive()
 }
 
 func fun2() {
@@ -23,4 +23,32 @@ func fun(n, m, p) {
 }
 
 func loneNode(){
+}
+
+func recursive(){
+    recursive()
+}
+
+func largeFunc(){
+    func21Lines
+    func21Lines
+    func21Lines
+    func21Lines
+    func21Lines
+    func21Lines
+    func21Lines
+    func21Lines
+    func21Lines
+    func21Lines
+    func21Lines
+    func21Linesfunc21Linesfunc21Lines
+    func21Linesfunc21Lines
+    func21Lines
+    func21Lines
+    func21Linesfunc21Lines
+    func21Lines
+    func21Lines
+    func21Lines
+    func21Lines
+    func21Lines
 }
