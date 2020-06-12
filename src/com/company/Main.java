@@ -14,6 +14,7 @@ public class Main {
 
         // Read file
         String fileName = "test.go";
+        //String fileName = "test_sort.go";
         List<String> content = Files.readAllLines(Paths.get(fileName));
 
         // Get individual functions

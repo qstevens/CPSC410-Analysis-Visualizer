@@ -6,7 +6,7 @@ public class FunctionNode {
     String name, shape, borderColor, style, fillColor;
     Set<String> neighbors; // only include functions that call this function
     int numOfLines, numOfReferences;
-    static final int BORDER_WIDTH = 3;
+    static final int BORDER_WIDTH = 2;
 
     public FunctionNode(String functionName) {
         this.name = functionName;
@@ -21,15 +21,16 @@ public class FunctionNode {
 
     public void setNumOfLines(Integer numOfLines){
         this.numOfLines = numOfLines;
-        //setFillColor();
+        setFillColor();
     }
 
     public void setNumOfRef(Integer numOfRef){
+        //if (numOfRef == null) this.numOfReferences = 0;
         this.numOfReferences = numOfRef;
-        //setBorderColor();
+        setBorderColor();
     }
 
-    private String setFillColor(){
+    private void setFillColor(){
         if (this.numOfLines <= 20){
             this.fillColor = "palegreen3";
         } else if (this.numOfLines <= 50){
@@ -39,11 +40,12 @@ public class FunctionNode {
         } else {
             this.fillColor = "orangered1";
         }
-        return "none";
     }
 
-    private String setBorderColor(){
-        return "";
+    private void setBorderColor(){
+        if (this.numOfReferences == 1){
+            this.borderColor = "red";
+        }
     }
 
 

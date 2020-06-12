@@ -1,18 +1,18 @@
 digraph functionAnalysis {
-" fun(n, m, p)"[shape=oval penwidth=3  color=black style=filled fillcolor=lightgray] 
+" fun(n, m, p)"[shape=oval penwidth=2  color=black style=filled fillcolor=palegreen3] 
 " main()"->" fun(n, m, p)"
 " fun()"->" fun(n, m, p)"
-" main()"[shape=oval penwidth=3  color=black style=filled fillcolor=lightgray] 
+" main()"[shape=oval penwidth=2  color=black style=filled fillcolor=palegreen3] 
 " fun2()"->" main()"
 " fun()"->" main()"
-" recursive()"[shape=oval penwidth=3  color=black style=filled fillcolor=lightgray] 
+" recursive()"[shape=oval penwidth=2  color=black style=filled fillcolor=palegreen3] 
 " recursive()"->" recursive()"
 " fun(n)"->" recursive()"
-" fun(n)"[shape=oval penwidth=3  color=black style=filled fillcolor=lightgray] 
+" fun(n)"[shape=oval penwidth=2  color=red style=filled fillcolor=palegreen3] 
 " fun()"->" fun(n)"
-" fun2()"[shape=oval penwidth=3  color=black style=filled fillcolor=lightgray] 
+" fun2()"[shape=oval penwidth=2  color=red style=filled fillcolor=palegreen3] 
 " fun2()"->" fun2()"
-" fun()"[shape=oval penwidth=3  color=black style=filled fillcolor=lightgray] 
+" fun()"[shape=oval penwidth=2  color=black style=filled fillcolor=palegreen3] 
 " fun(n, m, p)"->" fun()"
 " fun2()"->" fun()"
 " loneNode()"
