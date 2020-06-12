@@ -2,24 +2,47 @@ func main() {
     fun(d, g, a)
 }
 
-func fun() {
-    main()
+func 26Lines() {
     fun(d)
+    fun(n, m, p)
+    fun(n, m, p)
+    fun(n, m, p)
+    fun(n, m, p)
+    fun(n, m, p)
+    fun(n, m, p)
+    fun(n, m, p)
+    fun(n, m, p)
+    fun(n, m, p)
+    fun(n, m, p)
+    fun(n, m, p)
+    fun(n, m, p)
+    fun(n, m, p)
+    fun(n, m, p)
+    fun(n, m, p)
+    fun(n, m, p)
+    fun(n, m, p)
+    fun(n, m, p)
+    fun(n, m, p)
+    fun(n, m, p)
+    fun(n, m, p)
+    fun(n, m, p)
+    fun(n, m, p)
+    fun(n, m, p)
     fun(n, m, p)
 }
 
 func fun(n) {
     recursive()
+    101Lines()
 }
 
 func fun2() {
-    main()
-    fun()
+    26Lines()
     fun2()
 }
 
 func fun(n, m, p) {
-    fun()
+    26Lines()
 }
 
 func loneNode(){
@@ -29,26 +52,160 @@ func recursive(){
     recursive()
 }
 
-func largeFunc(){
-    func21Lines
-    func21Lines
-    func21Lines
-    func21Lines
-    func21Lines
-    func21Lines
-    func21Lines
-    func21Lines
-    func21Lines
-    func21Lines
-    func21Lines
-    func21Linesfunc21Linesfunc21Lines
-    func21Linesfunc21Lines
-    func21Lines
-    func21Lines
-    func21Linesfunc21Lines
-    func21Lines
-    func21Lines
-    func21Lines
-    func21Lines
-    func21Lines
+func 51Lines(){
+    fun(n, m, p)
+    fun(n, m, p)
+    fun(n, m, p)
+    fun(n, m, p)
+    fun(n, m, p)
+    fun(n, m, p)
+    fun(n, m, p)
+    fun(n, m, p)
+    fun(n, m, p)
+    fun(n, m, p)
+    fun(n, m, p)
+    fun(n, m, p)
+    fun(n, m, p)
+    fun(n, m, p)
+    fun(n, m, p)
+    fun(n, m, p)
+    fun(n, m, p)
+    fun(n, m, p)
+    fun(n, m, p)
+    fun(n, m, p)
+    fun(n, m, p)
+    fun(n, m, p)
+    fun(n, m, p)
+    fun(n, m, p)
+    fun(n, m, p)
+    fun(n, m, p)
+    fun(n, m, p)
+    fun(n, m, p)
+    fun(n, m, p)
+    fun(n, m, p)
+    fun(n, m, p)
+    fun(n, m, p)
+    fun(n, m, p)
+    fun(n, m, p)
+    fun(n, m, p)
+    fun(n, m, p)
+    fun(n, m, p)
+    fun(n, m, p)
+    fun(n, m, p)
+    fun(n, m, p)
+    fun(n, m, p)
+    fun(n, m, p)
+    fun(n, m, p)
+    fun(n, m, p)
+    fun(n, m, p)
+    fun(n, m, p)
+    fun(n, m, p)
+    fun(n, m, p)
+    fun(n, m, p)
+    fun(n, m, p)
+    fun(n, m, p)
+}
+
+func 101Lines(){
+    fun(n, m, p)
+    fun(n, m, p)
+    fun(n, m, p)
+    fun(n, m, p)
+    fun(n, m, p)
+    fun(n, m, p)
+    fun(n, m, p)
+    fun(n, m, p)
+    fun(n, m, p)
+    fun(n, m, p)
+    fun(n, m, p)
+    fun(n, m, p)
+    fun(n, m, p)
+    fun(n, m, p)
+    fun(n, m, p)
+    fun(n, m, p)
+    fun(n, m, p)
+    fun(n, m, p)
+    fun(n, m, p)
+    fun(n, m, p)
+    fun(n, m, p)
+    fun(n, m, p)
+    fun(n, m, p)
+    fun(n, m, p)
+    fun(n, m, p)
+    fun(n, m, p)
+    fun(n, m, p)
+    fun(n, m, p)
+    fun(n, m, p)
+    fun(n, m, p)
+    fun(n, m, p)
+    fun(n, m, p)
+    fun(n, m, p)
+    fun(n, m, p)
+    fun(n, m, p)
+    fun(n, m, p)
+    fun(n, m, p)
+    fun(n, m, p)
+    fun(n, m, p)
+    fun(n, m, p)
+    fun(n, m, p)
+    fun(n, m, p)
+    fun(n, m, p)
+    fun(n, m, p)
+    fun(n, m, p)
+    fun(n, m, p)
+    fun(n, m, p)
+    fun(n, m, p)
+    fun(n, m, p)
+    fun(n, m, p)
+    fun(n, m, p)
+    fun(n, m, p)
+    fun(n, m, p)
+    fun(n, m, p)
+    fun(n, m, p)
+    fun(n, m, p)
+    fun(n, m, p)
+    fun(n, m, p)
+    fun(n, m, p)
+    fun(n, m, p)
+    fun(n, m, p)
+    fun(n, m, p)
+    fun(n, m, p)
+    fun(n, m, p)
+    fun(n, m, p)
+    fun(n, m, p)
+    fun(n, m, p)
+    fun(n, m, p)
+    fun(n, m, p)
+    fun(n, m, p)
+    fun(n, m, p)
+    fun(n, m, p)
+    fun(n, m, p)
+    fun(n, m, p)
+    fun(n, m, p)
+    fun(n, m, p)
+    fun(n, m, p)
+    fun(n, m, p)
+    fun(n, m, p)
+    fun(n, m, p)
+    fun(n, m, p)
+    fun(n, m, p)
+    fun(n, m, p)
+    fun(n, m, p)
+    fun(n, m, p)
+    fun(n, m, p)
+    fun(n, m, p)
+    fun(n, m, p)
+    fun(n, m, p)
+    fun(n, m, p)
+    fun(n, m, p)
+    fun(n, m, p)
+    fun(n, m, p)
+    fun(n, m, p)
+    fun(n, m, p)
+    fun(n, m, p)
+    fun(n, m, p)
+    fun(n, m, p)
+    fun(n, m, p)
+    fun(n, m, p)
+    fun(n, m, p)
 }

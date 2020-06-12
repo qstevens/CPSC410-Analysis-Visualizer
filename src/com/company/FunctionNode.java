@@ -11,7 +11,7 @@ public class FunctionNode {
     public FunctionNode(String functionName) {
         this.name = functionName;
         this.shape = "oval";
-        this.borderColor = "black";
+        this.borderColor = "grey12";
         this.style = "filled";
         this.fillColor = "lightgray";
         this.numOfLines = 0;
@@ -32,19 +32,19 @@ public class FunctionNode {
 
     private void setFillColor(){
         if (this.numOfLines <= 20){
-            this.fillColor = "palegreen3";
+            this.fillColor = "darkseagreen2";
         } else if (this.numOfLines <= 50){
             this.fillColor = "khaki1";
         } else if (this.numOfLines <= 100){
             this.fillColor = "orange";
         } else {
-            this.fillColor = "orangered1";
+            this.fillColor = "tomato";
         }
     }
 
     private void setBorderColor(){
         if (this.numOfReferences == 1){
-            this.borderColor = "red";
+            this.borderColor = "red4";
         }
     }
 

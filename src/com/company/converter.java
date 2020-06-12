@@ -60,9 +60,12 @@ public class converter {
         }
 // Lone node calculator
         for (Map.Entry<String, String> e: funcMap.entrySet()) {
-//            FunctionNode func = functions.get(e.getKey());
-//            bodyContent += String.format("\"" + func.name + "\"" + "[shape=%s penwidth=%d  color=%s style=%s fillcolor=%s] \n",
-//                    func.shape, func.BORDER_WIDTH, func.borderColor, func.style, func.fillColor);
+            System.out.println("********"+e.getValue());
+            FunctionNode func = functions.get(e.getValue());
+            bodyContent += String.format("\"" + func.name + "\"" + "[shape=%s penwidth=%d  color=%s style=%s " +
+                            "fillcolor=%s] \n",
+                    func.shape, func.BORDER_WIDTH, func.borderColor, func.style, func.fillColor);
+
             if(functionMap.get(e.getValue()) == null){
                 bodyContent +=
                         "\"" + e.getValue() + "\"" + "\n";
