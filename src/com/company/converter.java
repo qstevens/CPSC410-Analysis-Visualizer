@@ -24,7 +24,8 @@ public class converter {
 
     public void mapToDot () throws IOException{
 
-        Path fileName = Path.of("dot.txt");
+        //Path fileName = Path.of("dot.txt");
+        Path fileName = Path.of("output.dot");
         String beginSyntax = "digraph functionAnalysis {";
         String bodyContent ="";
         String endSyntax = "}";
@@ -60,7 +61,6 @@ public class converter {
         }
 // Lone node calculator
         for (Map.Entry<String, String> e: funcMap.entrySet()) {
-            System.out.println("********"+e.getValue());
             FunctionNode func = functions.get(e.getValue());
             bodyContent += String.format("\"" + func.name + "\"" + "[shape=%s penwidth=%d  color=%s style=%s " +
                             "fillcolor=%s] \n",
