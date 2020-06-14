@@ -1,20 +1,32 @@
 digraph functionAnalysis {
-" runFB(query)"[shape=oval penwidth=2  color=grey12 style=filled fillcolor=darkseagreen2] 
-" main()"->" runFB(query)"
-" findPhoto()"->" runFB(query)"
-" updatePhoto()"->" runFB(query)"
-" findPhoto()"[shape=oval penwidth=2  color=red4 style=filled fillcolor=khaki1] 
-" main()"->" findPhoto()"
-" downWorker(dDir)"[shape=oval penwidth=2  color=red4 style=filled fillcolor=tomato] 
-" findPhoto()"->" downWorker(dDir)"
-" downWorker(dDir)"[shape=oval penwidth=2  color=red4 style=filled fillcolor=tomato] 
-" runFB(query)"[shape=oval penwidth=2  color=grey12 style=filled fillcolor=darkseagreen2] 
-" init()"[shape=oval penwidth=2  color=grey12 style=filled fillcolor=orange] 
-" init()"
-" main()"[shape=oval penwidth=2  color=grey12 style=filled fillcolor=khaki1] 
+" fun(n, m, p)"[shape=oval penwidth=2.500000  color=grey12 style=filled fillcolor=lightskyblue] 
+" 51Lines()"->" fun(n, m, p)"
+" 26Lines()"->" fun(n, m, p)"
+" main()"->" fun(n, m, p)"
+" 101Lines()"->" fun(n, m, p)"
+" 26Lines()"[shape=oval penwidth=2.500000  color=grey12 style=filled fillcolor=khaki1] 
+" fun(n, m, p)"->" 26Lines()"
+" fun2()"->" 26Lines()"
+" 101Lines()"[shape=oval penwidth=2.500000  color=green2 style=filled fillcolor=tomato] 
+" fun(n)"->" 101Lines()"
+" recursive()"[shape=oval penwidth=2.500000  color=grey12 style=filled fillcolor=lightskyblue] 
+" recursive()"->" recursive()"
+" fun(n)"->" recursive()"
+" fun(n)"[shape=oval penwidth=2.500000  color=green2 style=filled fillcolor=lightskyblue] 
+" 26Lines()"->" fun(n)"
+" fun2()"[shape=oval penwidth=2.500000  color=green2 style=filled fillcolor=lightskyblue] 
+" fun2()"->" fun2()"
+" fun2()"[shape=oval penwidth=2.500000  color=green2 style=filled fillcolor=lightskyblue] 
+" loneNode()"[shape=oval penwidth=2.500000  color=grey12 style=filled fillcolor=lightskyblue] 
+" loneNode()"
+" main()"[shape=oval penwidth=2.500000  color=grey12 style=filled fillcolor=lightskyblue] 
 " main()"
-" findPhoto()"[shape=oval penwidth=2  color=red4 style=filled fillcolor=khaki1] 
-" updatePhoto()"[shape=oval penwidth=2  color=grey12 style=filled fillcolor=darkseagreen2] 
-" updatePhoto()"
+" fun(n, m, p)"[shape=oval penwidth=2.500000  color=grey12 style=filled fillcolor=lightskyblue] 
+" 26Lines()"[shape=oval penwidth=2.500000  color=grey12 style=filled fillcolor=khaki1] 
+" fun(n)"[shape=oval penwidth=2.500000  color=green2 style=filled fillcolor=lightskyblue] 
+" 51Lines()"[shape=oval penwidth=2.500000  color=grey12 style=filled fillcolor=orange] 
+" 51Lines()"
+" recursive()"[shape=oval penwidth=2.500000  color=grey12 style=filled fillcolor=lightskyblue] 
+" 101Lines()"[shape=oval penwidth=2.500000  color=green2 style=filled fillcolor=tomato] 
 
 }
