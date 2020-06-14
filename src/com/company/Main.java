@@ -13,7 +13,7 @@ public class Main {
         Map<String, Integer> funcLenMap = new HashMap<>();
 
         // Read file
-        String fileName = "test.go";
+        String fileName = "testFile.go";
         //String fileName = "test_sort.go";
         List<String> content = Files.readAllLines(Paths.get(fileName));
 

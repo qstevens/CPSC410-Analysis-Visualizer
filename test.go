@@ -29,6 +29,7 @@ func 26Lines() {
     fun(n, m, p)
     fun(n, m, p)
     fun(n, m, p)
+
 }
 
 func fun(n) {
